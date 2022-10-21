@@ -21,6 +21,13 @@ class AlbumsFragment : Fragment() {
             true
         }
 
+        binding.imageEditarPerfil.setOnClickListener {
+            val frag = DadosUsuarioFragment()
+            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.container, frag)?.commit()
+
+            true
+        }
+
 
         return binding.root
     }
