@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayoutSobre"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SobreFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/imageFernandoSobre2"
+        android:layout_width="80dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageFernandoSobre"
+        app:srcCompat="@drawable/_55516_800_auto"
+        tools:src="@drawable/_55516_800_auto" />
+
+    <ImageView
+        android:id="@+id/imageFernandoSobre3"
+        android:layout_width="80dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageFernandoSobre2"
+        app:srcCompat="@drawable/_55516_800_auto"
+        tools:src="@drawable/_55516_800_auto" />
+
+    <TextView
+        android:id="@+id/textSemestreSobre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:text="4º Semestre"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textNomeCursoSobre" />
+
+    <TextView
+        android:id="@+id/textNomeCursoSobre"
+        android:layout_width="268dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="24dp"
+        android:text="Tecnólogo em Sistemas para Internet"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textEmailRenanSobre" />
+
+    <TextView
+        android:id="@+id/textOlaSobre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Olá, somos o Alpha2 Go"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageFernandoSobre"
+        android:layout_width="80dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textOlaSobre"
+        app:srcCompat="@drawable/_55516_800_auto" />
+
+    <TextView
+        android:id="@+id/textEmailFernandoSobre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="lfma02101@gmail.com"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageFernandoSobre"
+        app:layout_constraintTop_toBottomOf="@+id/textNomeFernandoSobre" />
+
+    <TextView
+        android:id="@+id/textEmailMilenaSobre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="milenasg91@gmail.com"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toEndOf="@+id/imageFernandoSobre2"
+        app:layout_constraintTop_toBottomOf="@+id/textNomeMilenaSobre" />
+
+    <TextView
+        android:id="@+id/textNomeMilenaSobre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Milena Souza Galvão"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintStart_toEndOf="@+id/imageFernandoSobre2"
+        app:layout_constraintTop_toBottomOf="@+id/textEmailFernandoSobre" />
+
+    <TextView
+        android:id="@+id/textNomeRenanSobre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:text="Renan Augusto da Silva"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageFernandoSobre"
+        app:layout_constraintTop_toBottomOf="@+id/textEmailMilenaSobre" />
+
+    <TextView
+        android:id="@+id/textEmailRenanSobre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="renan.augusto09@gmail.com"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageFernandoSobre"
+        app:layout_constraintTop_toBottomOf="@+id/textNomeRenanSobre" />
+
+    <TextView
+        android:id="@+id/textNomeFernandoSobre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:text="Luiz Fernando Moraes Alves"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageFernandoSobre"
+        app:layout_constraintTop_toBottomOf="@+id/textOlaSobre" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
