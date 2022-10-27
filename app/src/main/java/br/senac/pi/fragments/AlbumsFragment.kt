@@ -14,6 +14,28 @@ class AlbumsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentAlbumsBinding.inflate(inflater)
 
+        binding.imageSobre.setOnClickListener {
+            val frag = SobreFragment()
+            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.container, frag)?.commit()
+
+            true
+        }
+
+        binding.imagePedidos.setOnClickListener {
+            val frag = ArtistsFragment()
+            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.container, frag)?.commit()
+
+            true
+        }
+
+        binding.imageEditarPerfil.setOnClickListener {
+            val frag = DadosUsuarioFragment()
+            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.container, frag)?.commit()
+
+            true
+        }
+
+
         return binding.root
     }
 

@@ -6,6 +6,7 @@ import br.senac.pi.R
 import br.senac.pi.databinding.ActivityBottomNavigationBinding
 import br.senac.pi.fragments.AlbumsFragment
 import br.senac.pi.fragments.ArtistsFragment
+import br.senac.pi.fragments.DadosUsuarioFragment
 import br.senac.pi.fragments.RecentsFragment
 
 class BottomNavigationActivity : AppCompatActivity() {
@@ -21,7 +22,7 @@ class BottomNavigationActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnItemSelectedListener {
             //Verifica qual opção do menu foi clicada, de acordo com o ID das opções no arquivo de menu
             when(it.itemId) {
-                //Se licou no menu com ID "artistas"
+                //Se clicou no menu com ID "artistas"
                 R.id.pesquisar -> {
                     //Cria uma nova instância do fragmento de artistas
                     val frag = ArtistsFragment()
@@ -29,12 +30,8 @@ class BottomNavigationActivity : AppCompatActivity() {
                     //pelo fragmento de artistas
                     supportFragmentManager.beginTransaction().replace(R.id.container, frag).commit()
                 }
-                //Se licou no menu com ID "albuns"
                 R.id.perfil -> {
-                    //Cria uma nova instância do fragmento de albuns
                     val frag = AlbumsFragment()
-                    //Faz o gestor de fragmentos trocar o fragmento atualmente em exibição
-                    //pelo fragmento de albuns
                     supportFragmentManager.beginTransaction().replace(R.id.container, frag).commit()
                 }
                 //Se clicou em outra opção
