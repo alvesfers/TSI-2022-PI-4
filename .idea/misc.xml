@@ -7,9 +7,12 @@
         <entry key="..\:/Users/fefea/AndroidStudioProjects/pi4s/app/src/main/res/drawable/person.xml" value="0.194" />
         <entry key="..\:/Users/fefea/AndroidStudioProjects/pi4s/app/src/main/res/drawable/search.xml" value="0.194" />
         <entry key="..\:/Users/fefea/AndroidStudioProjects/pi4s/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.264" />
+        <entry key="..\:/Users/fefea/AndroidStudioProjects/pi4s/app/src/main/res/layout/activity_cadastrar_usuario.xml" value="0.159375" />
+        <entry key="..\:/Users/fefea/AndroidStudioProjects/pi4s/app/src/main/res/layout/activity_login.xml" value="0.159375" />
         <entry key="..\:/Users/fefea/AndroidStudioProjects/pi4s/app/src/main/res/layout/cabecalho_nv.xml" value="0.2" />
         <entry key="..\:/Users/fefea/AndroidStudioProjects/pi4s/app/src/main/res/layout/fragment_albums.xml" value="0.1859375" />
         <entry key="..\:/Users/fefea/AndroidStudioProjects/pi4s/app/src/main/res/layout/fragment_artists.xml" value="0.264" />
+        <entry key="..\:/Users/fefea/AndroidStudioProjects/pi4s/app/src/main/res/layout/fragment_dados_usuario.xml" value="0.159375" />
         <entry key="..\:/Users/fefea/AndroidStudioProjects/pi4s/app/src/main/res/layout/fragment_recents.xml" value="0.25" />
         <entry key="..\:/Users/fefea/AndroidStudioProjects/pi4s/app/src/main/res/layout/lista_lateral.xml" value="0.264" />
         <entry key="..\:/Users/fefea/AndroidStudioProjects/pi4s/app/src/main/res/layout/produto_carrinho.xml" value="0.536" />
