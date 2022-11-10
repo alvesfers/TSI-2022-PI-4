@@ -15,7 +15,8 @@ class ProdutoFragment(val idProduto: Long) : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentProdutoBinding.inflate(inflater)
 
-binding.
+//        binding
+        //colocar scroll view no produto detalhe
         return binding.root
     }
 

@@ -9,7 +9,7 @@ interface ProdutoService {
     @GET("/api/produto/") //Call<T>(retrofit2) //Se a anotação não importar automático aperte alt + enter
     fun listar(): Call<List<Produto>>
 
-    @GET("/android/rest/produto/{id}")
+    @GET("/api/produto/{id}")
     fun get(@Path("id") id: Int): Call<Produto>
 
 }
