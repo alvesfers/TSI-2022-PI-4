@@ -18,4 +18,8 @@ class API {
         return retrofit.create(ProdutoService::class.java)
     }
 
+    val categoria: CategoriaService
+    get() {
+        return retrofit.create(CategoriaService::class.java)
+    }
 }

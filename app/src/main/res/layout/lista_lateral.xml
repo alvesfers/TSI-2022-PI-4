@@ -3,25 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cartaoLateral"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="8dp"
+    app:cardUseCompatPadding="true">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imgProdutoLateral"
-            android:layout_width="125dp"
-            android:layout_height="125dp"
-            app:srcCompat="@drawable/_55516_800_auto"
-            tools:src="@drawable/_55516_800_auto" />
+            android:id="@+id/imageView6"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/_55516_800_auto" />
 
         <TextView
             android:id="@+id/nomeProdutoLateral"
             android:layout_width="129dp"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_marginTop="10sp"
             android:text="Nome categoria"
             android:textAlignment="center"

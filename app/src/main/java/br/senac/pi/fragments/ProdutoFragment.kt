@@ -9,11 +9,13 @@ import br.senac.pi.R
 import br.senac.pi.databinding.FragmentArtistsBinding
 import br.senac.pi.databinding.FragmentProdutoBinding
 
-class ProdutoFragment : Fragment() {
+class ProdutoFragment(val idProduto: Long) : Fragment() {
     lateinit var binding: FragmentProdutoBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentProdutoBinding.inflate(inflater)
+
+
         return binding.root
     }
 
