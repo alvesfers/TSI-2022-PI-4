@@ -7,7 +7,7 @@
     tools:context=".fragments.ProdutoFragment" >
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/precoProdutoDetalhe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -15,10 +15,10 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/descricaoProdutoDetalhe" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/descricaoProdutoDetalhe"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="115dp"
@@ -28,10 +28,10 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageProdutoDetalhe" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tituloProdutoDetalhe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
@@ -42,14 +42,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageProdutoDetalhe"
         android:layout_width="213dp"
         android:layout_height="220dp"
         android:layout_marginTop="48dp"
         android:src="@drawable/_55516_800_auto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/tituloProdutoDetalhe" />
 
     <Button
         android:id="@+id/button"
@@ -61,5 +61,5 @@
         android:textColorLink="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/precoProdutoDetalhe" />
 </androidx.constraintlayout.widget.ConstraintLayout>
