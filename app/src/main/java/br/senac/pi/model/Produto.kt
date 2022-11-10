@@ -1,7 +1,7 @@
 package br.senac.pi.model
 
 data class Produto(
-    var PRODUTO_ID: Long,
+    var PRODUTO_ID: Int,
     var PRODUTO_NOME: String,
     var PRODUTO_DESC: String,
     var PRODUTO_PRECO: Float,

@@ -10,6 +10,6 @@ interface ProdutoService {
     fun listar(): Call<List<Produto>>
 
     @GET("/api/produto/{id}")
-    fun get(@Path("id") id: Int): Call<Produto>
+    fun getProduto(@Path("id") id: Int): Call<Produto>
 
 }

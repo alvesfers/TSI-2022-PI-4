@@ -1,10 +1,12 @@
 package br.senac.pi.service
 
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 class API {
-    private val retrofit: Retrofit
+     private val retrofit: Retrofit
         get() {
             return Retrofit
                 .Builder()
