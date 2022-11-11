@@ -12,8 +12,10 @@ import br.senac.pi.databinding.FragmentArtistsBinding
 import br.senac.pi.databinding.FragmentProdutoBinding
 import br.senac.pi.databinding.ListaLateralBinding
 import br.senac.pi.model.Produto
+import br.senac.pi.model.ProdutoResponse
 import br.senac.pi.service.API
 import com.google.android.material.snackbar.Snackbar
+import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,19 +31,19 @@ class ProdutoFragment(val idProduto: Int) : Fragment() {
     }
 
     fun atualizaProduto() {
-        val callback = object : Callback<Produto> {
-            override fun onResponse(call: Call<Produto>, response: Response<Produto>) {
+        val callback = object : Callback<ProdutoResponse> {
+            override fun onResponse(call: Call<ProdutoResponse>, response: Response<ProdutoResponse>) {
                 if(response.isSuccessful){
-                    val produto = response.body()
+                    val produtoResponse = response.body()
 
-                    atualizaUIProduto(produto)
+                    atualizaUIProduto(produtoResponse?.produto)
                 }else{
                     Snackbar.make(binding.layoutProdutoDetalhe, "Não é possível atualizar os produtos",
                         Snackbar.LENGTH_LONG).show()
                     Log.e("ERROR", response.errorBody().toString())
                 }
             }
-            override fun onFailure(call: Call<Produto>, t: Throwable) {
+            override fun onFailure(call: Call<ProdutoResponse>, t: Throwable) {
                 Snackbar.make(binding.layoutProdutoDetalhe, "Não foi possível atualizar os produtos",
                     Snackbar.LENGTH_LONG).show()
                 Log.e("ERROR", "Falha ao executar o serviço", t)
@@ -51,8 +53,20 @@ class ProdutoFragment(val idProduto: Int) : Fragment() {
     }
 
     fun atualizaUIProduto(produto: Produto?) {
-        binding.tituloProdutoDetalhe.text = produto?.PRODUTO_NOME.toString()
+
+        binding.tituloProdutoDetalhe.text = produto?.PRODUTO_NOME
+        binding.descricaoProdutoDetalhe.text = produto?.PRODUTO_DESC
+        binding.precoProdutoDetalhe.text = produto?.PRODUTO_PRECO.toString()
+
+
+        Picasso.get().load(produto?.produto__imagem?.first()?.IMAGEM_URL)
+            .into(binding.imageProdutoDetalhe)
+
 //                    binding.descricaoProdutoDetalhe.text = produto?.PRODUTO_DESC
 //                    binding.precoProdutoDetalhe.text = produto?.PRODUTO_PRECO.toString()
+        binding.buttonAdicionarAoCarrinho.setOnClickListener {
+
+
+        }
     }
 }

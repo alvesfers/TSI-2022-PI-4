@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import br.senac.pi.R
 import br.senac.pi.databinding.FragmentArtistsBinding
-import br.senac.pi.databinding.FragmentProdutoBinding
 import br.senac.pi.databinding.ListaLateralBinding
 import br.senac.pi.model.Categoria
 import br.senac.pi.model.Produto
 import br.senac.pi.service.API
 import com.google.android.material.snackbar.Snackbar
+import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -66,7 +66,8 @@ class ArtistsFragment : Fragment() {
             val cardBinding = ListaLateralBinding.inflate(layoutInflater)
 
             cardBinding.nomeProdutoLateral.text = it.PRODUTO_NOME
-            //Picasso.get().load()
+            //Picasso.get().load(it.produto__imagem?.first()?.IMAGEM_URL)
+                //.into(cardBinding.image)
 
             cardBinding.cartaoLateral.setOnClickListener { view ->
                 val frag = ProdutoFragment(it.PRODUTO_ID)
@@ -113,9 +114,6 @@ class ArtistsFragment : Fragment() {
             val cardBinding = ListaLateralBinding.inflate(layoutInflater)
 
             cardBinding.nomeProdutoLateral.text = it.CATEGORIA_NOME
-            //Picasso.get().load()
-
-
 
             binding.linearHorizontalCategorias.addView(cardBinding.root)
         }
