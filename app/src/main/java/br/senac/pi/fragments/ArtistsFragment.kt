@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import br.senac.pi.R
 import br.senac.pi.databinding.FragmentArtistsBinding
+import br.senac.pi.databinding.FragmentCategoriaLateralBinding
 import br.senac.pi.databinding.ListaLateralBinding
 import br.senac.pi.model.Categoria
 import br.senac.pi.model.Produto
@@ -111,9 +112,9 @@ class ArtistsFragment : Fragment() {
         binding.linearHorizontalCategorias.removeAllViews()
 
         lista?.forEach {
-            val cardBinding = ListaLateralBinding.inflate(layoutInflater)
+            val cardBinding = FragmentCategoriaLateralBinding.inflate(layoutInflater)
 
-            cardBinding.nomeProdutoLateral.text = it.CATEGORIA_NOME
+            cardBinding.nomeCategoriaLateral.text = it.CATEGORIA_NOME
 
             binding.linearHorizontalCategorias.addView(cardBinding.root)
         }

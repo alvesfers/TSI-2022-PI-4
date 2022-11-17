@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import br.senac.pi.R
 import br.senac.pi.databinding.FragmentRecentsBinding
 import br.senac.pi.databinding.ListaLateralBinding
 import br.senac.pi.databinding.ProdutoCarrinhoBinding
