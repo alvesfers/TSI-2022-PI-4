@@ -8,5 +8,5 @@ data class Produto(
     var PRODUTO_DESCONTO: Float,
     var CATEGORIA_ID: Long,
     var PRODUTO_ATIVO: Float,
-    var produto__imagem: List<Imagem>?
+    var IMAGENS: List<Imagem>?
 )

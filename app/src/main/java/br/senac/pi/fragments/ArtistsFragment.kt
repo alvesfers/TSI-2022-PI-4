@@ -11,7 +11,9 @@ import br.senac.pi.databinding.FragmentArtistsBinding
 import br.senac.pi.databinding.FragmentCategoriaLateralBinding
 import br.senac.pi.databinding.ListaLateralBinding
 import br.senac.pi.model.Categoria
+import br.senac.pi.model.CategoriaResponse
 import br.senac.pi.model.Produto
+import br.senac.pi.model.ProdutoResponse
 import br.senac.pi.service.API
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
@@ -32,71 +34,71 @@ class ArtistsFragment : Fragment() {
         return binding.root
     }
 
-    fun atualizaProdutos(){
-
-        val callback = object : Callback<List<Produto>> {
-            override fun onResponse(call: Call<List<Produto>>, response: Response<List<Produto>>) {
+    fun atualizaProdutos() {
+        val callback = object : Callback<ProdutoResponse> {
+            override fun onResponse(call: Call<ProdutoResponse>, response: Response<ProdutoResponse>) {
                 if(response.isSuccessful){
-                    val listaProdutos = response.body()
+                    val produtoResponse = response.body()
 
-                    atualizaUIProdutos(listaProdutos)
+                    atualizaUIProdutos(produtoResponse?.produtos)
                 }else{
-                    Snackbar.make(binding.linearHorizontalProdutos, "Não é possível atualizar os produtos",
-                    Snackbar.LENGTH_LONG).show()
-
+                    Snackbar.make(binding.linearLayoutProdutos, "Não é possível atualizar os produtos",
+                        Snackbar.LENGTH_LONG).show()
                     Log.e("ERROR", response.errorBody().toString())
                 }
             }
-
-            override fun onFailure(call: Call<List<Produto>>, t: Throwable) {
-                Snackbar.make(binding.linearHorizontalProdutos, "Não foi possível atualizar os produtos",
+            override fun onFailure(call: Call<ProdutoResponse>, t: Throwable) {
+                Snackbar.make(binding.linearLayoutProdutos, "Não foi possível conectar ao servidor",
                     Snackbar.LENGTH_LONG).show()
-
                 Log.e("ERROR", "Falha ao executar o serviço", t)
             }
-
         }
         API().produto.listar().enqueue(callback)
-
     }
 
+
     fun atualizaUIProdutos(lista: List<Produto>?) {
-        binding.linearHorizontalProdutos.removeAllViews()
 
         lista?.forEach {
             val cardBinding = ListaLateralBinding.inflate(layoutInflater)
 
             cardBinding.nomeProdutoLateral.text = it.PRODUTO_NOME
-            //Picasso.get().load(it.produto__imagem?.first()?.IMAGEM_URL)
-                //.into(cardBinding.image)
 
-            cardBinding.cartaoLateral.setOnClickListener { view ->
-                val frag = ProdutoFragment(it.PRODUTO_ID)
-                activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.container, frag)?.commit()
+            if (it.IMAGENS != null && it.IMAGENS?.size!! > 0) {
+                Picasso.get().load(
+                    "${it.IMAGENS?.first()?.IMAGEM_URL}"
+                ).into(cardBinding.image)
             }
 
+            cardBinding.root.setOnClickListener{ cartao ->
+                val frag = ProdutoFragment(it.PRODUTO_ID)
+                activity?.supportFragmentManager
+                    ?.beginTransaction()
+                    ?.replace(R.id.container, frag)
+                    ?.addToBackStack("Detalhe do Produto")?.commit()
+            }
+            //Adiciona o cartão no container para que apareça na tela
             binding.linearHorizontalProdutos.addView(cardBinding.root)
         }
-
     }
 
     fun atualizaCategorias(){
 
-        val callback = object : Callback<List<Categoria>> {
-            override fun onResponse(call: Call<List<Categoria>>, response: Response<List<Categoria>>) {
+        val callback = object : Callback<CategoriaResponse> {
+            override fun onResponse(call: Call<CategoriaResponse>, response: Response<CategoriaResponse>) {
                 if(response.isSuccessful){
                     val listaCategorias = response.body()
 
-                    atualizaUICategorias(listaCategorias)
+                    atualizaUICategorias(listaCategorias?.categoria)
                 }else{
-                    Snackbar.make(binding.linearHorizontalCategorias, "Não é possível atualizar os produtos",
+                    Snackbar.make(binding.linearHorizontalCategorias, "Não é possível atualizar as categorias",
                         Snackbar.LENGTH_LONG).show()
 
                     Log.e("ERROR", response.errorBody().toString())
                 }
             }
 
-            override fun onFailure(call: Call<List<Categoria>>, t: Throwable) {
+            override fun onFailure(call: Call<CategoriaResponse>, t: Throwable) {
                 Snackbar.make(binding.linearHorizontalCategorias, "Não foi possível atualizar os produtos",
                     Snackbar.LENGTH_LONG).show()
 

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginRight="10dp">
 
     <LinearLayout
         android:id="@+id/linearProduto2"
@@ -33,6 +34,7 @@
                         android:id="@+id/imgProduto2"
                         android:layout_width="150sp"
                         android:layout_height="125sp"
+                        android:foreground="@drawable/cart"
                         android:src="@drawable/_55516_800_auto" />
 
                     <LinearLayout
@@ -85,13 +87,13 @@
 
                             <Button
                                 android:id="@+id/btnMais2"
-                                app:icon="@drawable/mais"
-                                app:iconTint="#4CAF50"
-                                tools:ignore="SpeakableTextPresentCheck"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_weight="0"
-                                android:background="#00FFFFFF" />
+                                android:background="#00FFFFFF"
+                                app:icon="@drawable/mais"
+                                app:iconTint="#4CAF50"
+                                tools:ignore="SpeakableTextPresentCheck" />
                         </LinearLayout>
                     </LinearLayout>
 

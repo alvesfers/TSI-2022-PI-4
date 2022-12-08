@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import br.senac.pi.LoginActivity
 import br.senac.pi.R
 import br.senac.pi.databinding.FragmentAlbumsBinding
 
@@ -34,6 +35,13 @@ class AlbumsFragment : Fragment() {
 
             true
         }
+
+//        binding.imageBtnSair.setOnClickListener {
+//            val frag = LoginActivity()
+//            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.container, frag)?.commit()
+//
+//            true
+//        }
 
 
         return binding.root

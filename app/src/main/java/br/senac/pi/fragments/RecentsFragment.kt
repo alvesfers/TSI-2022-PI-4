@@ -18,7 +18,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RecentsFragment : Fragment() {
+class RecentsFragment(val USUARIO_ID: Int) : Fragment() {
 
     lateinit var binding: FragmentRecentsBinding
 
@@ -53,7 +53,7 @@ class RecentsFragment : Fragment() {
             }
 
         }
-        API().carrinho.listar().enqueue(callback)
+        API().carrinho.listarCarrinho(USUARIO_ID).enqueue(callback)
 
     }
 
@@ -69,5 +69,9 @@ class RecentsFragment : Fragment() {
 //        }
 
     }
+
+}
+
+private fun <T> Call<T>.enqueue(callback: Callback<CarrinhoResponse>) {
 
 }

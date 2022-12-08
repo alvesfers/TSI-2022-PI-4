@@ -44,7 +44,7 @@ class BottomNavigationActivity : AppCompatActivity() {
                 //Se clicou em outra opção
                 else -> {
                     //Cria uma nova instância do fragmento de recentes
-                    val frag = RecentsFragment()
+                    val frag = RecentsFragment(12)
                     //Faz o gestor de fragmentos trocar o fragmento atualmente em exibição
                     //pelo fragmento de recentes
                     supportFragmentManager.beginTransaction().replace(R.id.container, frag).commit()
